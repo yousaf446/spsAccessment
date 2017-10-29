@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SPS Access</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+    <!-- Material -->
+    <link rel="stylesheet" href="../bower_components/angular-material/angular-material.min.css">
+
+    <!-- Material Icons -->
+    <link rel="stylesheet" href="../bower_components/angular-material-icons/angular-material-icons.css">
+
+    <!-- notify -->
+    <link rel="stylesheet" href="../bower_components/angular-notify/dist/angular-notify.min.css">
+
+    <!-- Material File Upload -->
+    <link rel="stylesheet" href="../bower_components/lf-ng-md-file-input/dist/lf-ng-md-file-input.css">
+
+    <!-- App Style -->
+    <link rel="stylesheet" href="app.css">
+
+</head>
+<body ng-app="app" ng-controller="MainController as main">
+
+<div id="loading-overlay" ng-if="main.loader">
+    <table width="100%" height="100%">
+        <tr><td valign="middle"><img src="assets/img/loading.gif" width="80px" height="80px"/><p>Processing</p></td></tr>
+    </table>
+</div>
+<top-nav ng-if="main.session"></top-nav>
+<div ui-view></div>
+
+</body>
+
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../bower_components/angular/angular.min.js"></script>
+<script src="../bower_components/angular-aria/angular-aria.min.js"></script>
+<script src="../bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="../bower_components/angular-notify/dist/angular-notify.js"></script>
+<script src="../bower_components/angular-material/angular-material.min.js"></script>
+<script src="../bower_components/angular-material-icons/angular-material-icons.min.js"></script>
+<script src="../bower_components/lf-ng-md-file-input/dist/lf-ng-md-file-input.min.js"></script>
+
+<script src="config/app.js"></script>
+<script src="config/routes.js"></script>
+<script src="config/run.js"></script>
+
+<script src="common/endPointsUrl.js"></script>
+<script src="common/controllers/main.controller.js"></script>
+
+<script src="parse/services/parse.factory.js"></script>
+<script src="parse/services/parse.service.js"></script>
+<script src="parse/directives/fileData.directive.js"></script>
+<script src="parse/controllers/uploadFile.controller.js"></script>
+
+</html>

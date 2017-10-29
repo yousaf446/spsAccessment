@@ -1,0 +1,45 @@
+#loading-overlay {
+    position: fixed;
+    top:0px;
+    right:0px;
+    width:100%;
+    height:100%;
+    background-repeat:no-repeat;
+    background-position:center;
+    background-color: transparent;
+    text-align: center;
+    z-index:10000000;
+    /*opacity: 0.4;*/
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+}
+
+.reduce-row-margin {
+    margin-top: -25px;
+}
+
+.parsed-table {
+    background-color: white !important;
+}
+
+.parsed-table-head {
+    background-color: whitesmoke !important;
+}
+
+.parsed-table-group-row {
+    height: 40px;
+    font-size: 16px;
+}
+
+.parsed-table-sub-row {
+    height: 40px;
+    font-size: 16px;
+    background-color: whitesmoke;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.error-data {
+    color: red;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Data</title>
+</head>
+<body>
+<div layout="row" layout-align="center center">
+    <h3>{{ fileData.parsedData.fileType }}</h3>
+</div>
+<div layout="row" layout-align="center center" class="reduce-row-margin">
+    <h3>{{ fileData.parsedData.building }}</h3>
+</div>
+<div layout="row" layout-align="center center" class="reduce-row-margin">
+    <h3>{{ fileData.parsedData.timeSpan }}</h3>
+</div>
+<div layout="row" layout-align="center center" class="reduce-row-margin">
+    <h3>{{ fileData.parsedData.createdOn }}</h3>
+</div>
+<table ng-show="fileData.parsedData.tableData.length > 0" class="table table-condensed table-bordered table-hover" class="parsed-table">
+    <thead class="parsed-table-head">
+    <tr align="center">
+        <th class="center-text" colspan="7">Lease Charges</th>
+        <th class="center-text" colspan="6">Base Rent</th>
+        <th class="center-text" colspan="2">CAM</th>
+        <th class="center-text" colspan="2">Real Estate Tax</th>
+        <th class="center-text" colspan="2">Insurance</th>
+        <th class="center-text" colspan="2">Utilities</th>
+        <th class="center-text" colspan="3">Other</th>
+        <th class="center-text" colspan="2">Gross Rent</th>
+
+    </tr>
+    <tr>
+        <th ng-repeat="tshVal in fileData.parsedData.tableSubHead track by $index"> {{ tshVal }} </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="ng-table-group parsed-table-group-row" ng-repeat-start="(dataKey, dataRow) in fileData.parsedData.tableData">
+        <td ng-repeat="dataCell in dataRow.mainData track by $index">{{ dataCell }}</td>
+    </tr>
+    <tr class="ng-table-group parsed-table-sub-row" ng-repeat="subRow in dataRow.subData" ng-repeat-end="">
+        <td ng-repeat="dataSubCell in subRow.mainSubData track by $index">{{ dataSubCell }}</td>
+    </tr>
+    </tbody>
+</table>
+<div layout="row" layout-align="center center">
+    <span flex="10"></span>
+    <md-card flex="40" ng-repeat="occupancy in fileData.parsedData.occupancyData">
+        <h4 class="center-text"> {{ occupancy.type }}</h4>
+        <table class="table table-condensed table-bordered">
+            <thead>
+            <tr>
+                <td>Type</td>
+                <td>Total</td>
+                <td>Occupied</td>
+                <td>%</td>
+                <td>Vacant</td>
+                <td>%</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="occupancyData in occupancy.data">
+                <td> {{ occupancyData.type }}</td>
+                <td> {{ occupancyData.Total }}</td>
+                <td> {{ occupancyData.Occupied }}</td>
+                <td> {{ occupancyData['o%'] }}</td>
+                <td> {{ occupancyData.Vacant }}</td>
+                <td> {{ occupancyData['v%'] }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </md-card>
+</div>
+</body>
+</html>

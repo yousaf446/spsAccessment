@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload File</title>
+</head>
+<body>
+<div layout="row" layout-align="center center">
+    <h2>Upload File</h2>
+</div>
+<div layout="row" layout-align="center center">
+    <lf-ng-md-file-input lf-placeholder="Select File" lf-files="upload.exlFile" lf-api="stencils.exlFile" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"></lf-ng-md-file-input>
+    <md-button class="md-primary md-raised" ng-disabled="upload.exlFile.length == 0" ng-click="upload.uploadFile()">Upload</md-button>
+</div>
+
+<file-data ng-if="upload.showFileData" parse-data="upload.fileData"></file-data>
+<div layout="row" layout-align="center center" ng-if="upload.showError">
+    <h3 class="error-data"> Unable to parse file</h3>
+</div>
+</body>
+</html>
