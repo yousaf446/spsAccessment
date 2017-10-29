@@ -7,7 +7,7 @@ gulp.task('webserver', function() {
             livereload: false,
             directoryListing: true,
             port: 9000,
-            open: "http://localhost:9000/client/"
+            open: "http://localhost:9000/client/index.html"
         }));
 });
 
